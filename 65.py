@@ -20,8 +20,6 @@ def friday_13(input_year, input_month):
     else:
         return False
 
-
-
 mm, yyyy = input("Provide a month MM and year YYYY, I will tell you if there is a Friday 13th in it: ").split()
 
 print(friday_13(yyyy, mm))

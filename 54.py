@@ -42,16 +42,19 @@ leet_alphabet = {
     'z': '2'
 }
 
-print(leet_alphabet)
+#print(leet_alphabet)
 
 inputword = input("Type a word that would be translated to leet alphabet: ").lower()
 #print(inputword)
 
 translated_word = []
 for l in inputword:
-    #print(l)
-    trans_leter = leet_alphabet.get(l)
-    translated_word.append(trans_leter)
+    if l.lower() in leet_alphabet:
+        #print(l)
+        trans_leter = leet_alphabet.get(l.lower())
+        translated_word.append(trans_leter)
+    else:
+        translated_word.append(l)
 
 print(f"The translated word is: {''.join(translated_word)}" )
 
