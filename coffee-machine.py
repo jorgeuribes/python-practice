@@ -30,13 +30,6 @@ resources = {
     "coffee": 100,
 }
 
-coins = {
-    "penny": 0.01,
-    "nickle": 0.05,
-    "dime": 0.1,
-    "quarter": 0.25
-}
-
 customer_order = ""
 balance = 0.0
 
