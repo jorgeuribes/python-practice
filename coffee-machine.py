@@ -48,7 +48,7 @@ def report():
 
 def take_order():
     while True:
-        order = input("What do you want to order (espresso/latte/cappuccino)? ").lower()
+        order = input("What do you want to order (espresso/latte/cappuccino)? ").lower().strip()
         if order in MENU or order == "off" or order == "report" :
             return order
         else:
