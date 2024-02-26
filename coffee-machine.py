@@ -76,7 +76,9 @@ def update_resources(drink):
 
 def check_payment(drink):
     global balance
+    payment_ok = False
     price = MENU[drink]["cost"]
+    print(f"The {drink} price is ${price}, deposit coins")
     quarters = input("How many quarters? ").strip() or "0"
     dimes = input("How many dimes? ").strip() or "0"
     nickles = input("How many nickles? ").strip() or "0"
@@ -87,8 +89,10 @@ def check_payment(drink):
         change = payment - price
         if change > 0:
             print(f"Here is {round(change,2)} in change")
-    # print(round(payment,2))
-    # print(balance)
+        payment_ok = True
+    else:
+        print("You did not cover the price ... take your money back")
+    return payment_ok
 
 
 while customer_order != "off":
@@ -100,8 +104,8 @@ while customer_order != "off":
     else:
         make_coffe, missing_ingredient = check_resources(customer_order)
         if make_coffe:
-            check_payment(customer_order)
-            update_resources(customer_order)
-            print(f"Here is your {customer_order} enjoy !")
+            if check_payment(customer_order):
+                update_resources(customer_order)
+                print(f"Here is your {customer_order} enjoy !")
         else:
             print(f"Sorry there is not enough {missing_ingredient} :( ")
