@@ -66,7 +66,7 @@ def check_resources(drink):
             return enough_resources, out_of
 def update_resources(drink):
     for ingridient in MENU[drink]["ingredients"]:
-        resources[ingridient] = resources[ingridient] - MENU[drink]["ingredients"][ingridient]
+        resources[ingridient] -= MENU[drink]["ingredients"][ingridient]
         #print(resources[ingridient])
 
 def check_payment(drink):
